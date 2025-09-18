@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/ui/navbar'
+import { SiteFooter } from '@/components/ui/footer'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,6 +31,14 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <SiteFooter
+          companyName="枫禾智尚（示例）"
+          icp={undefined} // 备案通过后填： "沪ICP备12345678号-1"
+          police={null} // 通过后填：{ code: "沪公网安备 3101010200xxxx 号", link: "https://www.beian.gov.cn/portal/registerSystemInfo" }
+          address="北京市 ×× 区 ×× 路 ×× 号"
+          phone="010-xxxx-xxxx"
+          email="hi@yourdomain.com"
+        />
       </body>
     </html>
   )
