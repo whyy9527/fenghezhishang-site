@@ -1,4 +1,4 @@
-export const metadata = { title: '免责声明 - 枫禾智尚' }
+export const metadata = { title: '免责声明 - 丰和智尚' }
 
 export default function TermsPage() {
   return (

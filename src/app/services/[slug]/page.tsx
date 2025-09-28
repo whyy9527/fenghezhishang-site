@@ -40,7 +40,7 @@ export async function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const s = SERVICES.find((x) => x.slug === params.slug)
-  return { title: s ? `${s.title} - 枫禾智尚` : '服务详情 - 枫禾智尚' }
+  return { title: s ? `${s.title} - 丰和智尚` : '服务详情 - 丰和智尚' }
 }
 
 export default function ServiceDetail({

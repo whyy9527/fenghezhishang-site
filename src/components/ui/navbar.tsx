@@ -35,7 +35,7 @@ export function Navbar() {
           href="/"
           className="text-[16px] leading-[24px] font-medium text-fg"
         >
-          枫禾智尚
+          丰和智尚
         </Link>
 
         {/* Desktop Nav */}

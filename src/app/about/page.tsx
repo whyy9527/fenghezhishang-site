@@ -6,7 +6,7 @@ import {
   AccordionContent,
 } from '@/components/ui/accordion'
 
-export const metadata = { title: '关于我们 - 枫禾智尚' }
+export const metadata = { title: '关于我们 - 丰和智尚' }
 
 export default function AboutPage() {
   return (

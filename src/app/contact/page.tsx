@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 
-export const metadata = { title: '联系我们 - 枫禾智尚' }
+export const metadata = { title: '联系我们 - 丰和智尚' }
 
 export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false)

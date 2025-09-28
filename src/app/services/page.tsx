@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
-export const metadata = { title: '服务与能力 - 枫禾智尚' }
+export const metadata = { title: '服务与能力 - 丰和智尚' }
 
 const services = [
   {
