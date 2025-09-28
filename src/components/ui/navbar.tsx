@@ -14,12 +14,17 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 export function Navbar() {
   const [open, setOpen] = useState(false)
 
-  const links = [
+  const mainLinks = [
     { href: '/', label: '首页' },
     { href: '/services', label: '服务' },
     { href: '/cases', label: '案例' },
     { href: '/about', label: '关于我们' },
     { href: '/contact', label: '联系' },
+  ]
+
+  const policyLinks = [
+    { href: '/privacy', label: '隐私政策' },
+    { href: '/terms', label: '免责声明' }, // 若以后升级为用户协议，这里改成“用户协议”
   ]
 
   return (
@@ -37,11 +42,23 @@ export function Navbar() {
         <nav className="hidden md:flex items-center gap-[16px]">
           <NavigationMenu>
             <NavigationMenuList className="gap-[8px]">
-              {links.map((l) => (
+              {mainLinks.map((l) => (
                 <NavigationMenuItem key={l.href}>
                   <Link
                     href={l.href}
-                    className="px-[10px] py-[6px] text-[14px] leading-[22px] text-[var(--surface-foreground)] hover:underline underline-offset-4"
+                    className="px-[10px] py-[6px] text-[14px] leading-[22px] hover:underline underline-offset-4"
+                  >
+                    {l.label}
+                  </Link>
+                </NavigationMenuItem>
+              ))}
+              {/* 分隔符（可选） */}
+              <span className="mx-[4px] text-[12px] text-muted">|</span>
+              {policyLinks.map((l) => (
+                <NavigationMenuItem key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="px-[10px] py-[6px] text-[14px] leading-[22px] text-muted hover:underline underline-offset-4"
                   >
                     {l.label}
                   </Link>
@@ -72,8 +89,8 @@ export function Navbar() {
               side="right"
               className="w-[80%] max-w-[320px] p-[20px]"
             >
-              <div className="flex flex-col gap-[8px] mt-[12px]">
-                {links.map((l) => (
+              <nav className="flex flex-col gap-[8px] mt-[12px]">
+                {mainLinks.map((l) => (
                   <Link
                     key={l.href}
                     href={l.href}
@@ -83,12 +100,23 @@ export function Navbar() {
                     {l.label}
                   </Link>
                 ))}
+                <div className="h-[1px] bg-[var(--border)] my-[8px]" />
+                {policyLinks.map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="block px-[8px] py-[10px] rounded-[12px] text-[14px] leading-[22px] text-muted hover:bg-[var(--gray-50)]"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
                 <Link href="/contact" onClick={() => setOpen(false)}>
                   <Button className="mt-[8px] h-[40px] w-full text-[14px] leading-[22px] bg-[var(--brand-600)] hover:bg-[var(--brand-700)]">
                     咨询合作
                   </Button>
                 </Link>
-              </div>
+              </nav>
             </SheetContent>
           </Sheet>
         </div>
