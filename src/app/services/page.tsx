@@ -27,11 +27,11 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-surface text-fg">
+    <main className="bg-background text-foreground">
       <section className="border-b border-[var(--border)]">
         <div className="mx-auto max-w-[1120px] px-[20px] py-[48px]">
           <h1 className="text-[28px] leading-[36px] mb-[8px]">服务与能力</h1>
-          <p className="text-[14px] leading-[22px] text-muted">
+          <p className="text-[14px] leading-[22px] text-muted-foreground">
             以“清晰目标、最小可行、度量反馈”为方法，提供稳定可靠的工程与交付。
           </p>
         </div>
@@ -48,7 +48,7 @@ export default function ServicesPage() {
                 <h3 className="text-[20px] leading-[28px]">{s.title}</h3>
               </CardHeader>
               <CardContent className="p-[20px] pt-[8px]">
-                <p className="text-[14px] leading-[22px] text-muted mb-[12px]">
+                <p className="text-[14px] leading-[22px] text-muted-foreground mb-[12px]">
                   {s.desc}
                 </p>
                 <div className="flex flex-wrap gap-[8px] mb-[16px]">

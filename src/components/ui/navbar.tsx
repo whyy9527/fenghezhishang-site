@@ -17,7 +17,7 @@ export function Navbar() {
   const mainLinks = [
     { href: '/', label: '首页' },
     { href: '/services', label: '服务' },
-    { href: '/cases', label: '案例' },
+    // { href: '/cases', label: '案例' },
     { href: '/about', label: '关于我们' },
     { href: '/contact', label: '联系' },
   ]
@@ -28,12 +28,12 @@ export function Navbar() {
   ]
 
   return (
-    <header className="w-full border-b border-[var(--border)] bg-surface">
+    <header className="w-full border-b border-[var(--border)] bg-background">
       <div className="mx-auto max-w-[1120px] px-[20px] h-[60px] flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="text-[16px] leading-[24px] font-medium text-fg"
+          className="text-[16px] leading-[24px] font-medium text-foreground"
         >
           丰和智尚
         </Link>
@@ -53,12 +53,14 @@ export function Navbar() {
                 </NavigationMenuItem>
               ))}
               {/* 分隔符（可选） */}
-              <span className="mx-[4px] text-[12px] text-muted">|</span>
+              <span className="mx-[4px] text-[12px] text-muted-foreground">
+                |
+              </span>
               {policyLinks.map((l) => (
                 <NavigationMenuItem key={l.href}>
                   <Link
                     href={l.href}
-                    className="px-[10px] py-[6px] text-[14px] leading-[22px] text-muted hover:underline underline-offset-4"
+                    className="px-[10px] py-[6px] text-[14px] leading-[22px] text-muted-foreground hover:underline underline-offset-4"
                   >
                     {l.label}
                   </Link>
@@ -106,7 +108,7 @@ export function Navbar() {
                     key={l.href}
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block px-[8px] py-[10px] rounded-[12px] text-[14px] leading-[22px] text-muted hover:bg-[var(--gray-50)]"
+                    className="block px-[8px] py-[10px] rounded-[12px] text-[14px] leading-[22px] text-muted-foreground hover:bg-[var(--gray-50)]"
                   >
                     {l.label}
                   </Link>

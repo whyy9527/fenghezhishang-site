@@ -10,11 +10,11 @@ export const metadata = { title: '关于我们 - 丰和智尚' }
 
 export default function AboutPage() {
   return (
-    <main className="bg-surface text-fg">
+    <main className="bg-background text-foreground">
       <section className="border-b border-[var(--border)]">
         <div className="mx-auto max-w-[1120px] px-[20px] py-[48px]">
           <h1 className="text-[28px] leading-[36px] mb-[8px]">关于我们</h1>
-          <p className="text-[14px] leading-[22px] text-muted">
+          <p className="text-[14px] leading-[22px] text-muted-foreground">
             我们是一家专注于 XX
             方向的技术服务团队，致力于以稳健的工程能力与务实的交付，帮助客户达成目标。
           </p>
@@ -45,7 +45,7 @@ export default function AboutPage() {
                 <h3 className="text-[20px] leading-[28px]">{i.title}</h3>
               </CardHeader>
               <CardContent className="p-[20px] pt-[8px]">
-                <p className="text-[14px] leading-[22px] text-muted">
+                <p className="text-[14px] leading-[22px] text-muted-foreground">
                   {i.desc}
                 </p>
               </CardContent>
@@ -62,7 +62,7 @@ export default function AboutPage() {
               <AccordionTrigger className="text-[14px] leading-[22px]">
                 信息展示与合规声明
               </AccordionTrigger>
-              <AccordionContent className="text-[14px] leading-[22px] text-muted">
+              <AccordionContent className="text-[14px] leading-[22px] text-muted-foreground">
                 本网站仅用于公司信息与服务能力的展示，不涉及新闻采编、教育培训、直播、交易撮合等需前置审批的活动。如需开展经营性互联网信息服务，将按法规申请相关资质。
               </AccordionContent>
             </AccordionItem>
@@ -70,7 +70,7 @@ export default function AboutPage() {
               <AccordionTrigger className="text-[14px] leading-[22px]">
                 隐私与数据保护
               </AccordionTrigger>
-              <AccordionContent className="text-[14px] leading-[22px] text-muted">
+              <AccordionContent className="text-[14px] leading-[22px] text-muted-foreground">
                 在获得您授权的前提下收集必要信息，并仅用于联系与服务对接，未经许可不对外共享。
               </AccordionContent>
             </AccordionItem>

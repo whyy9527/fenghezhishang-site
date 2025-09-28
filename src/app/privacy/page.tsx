@@ -2,11 +2,11 @@ export const metadata = { title: '隐私政策 - 丰和智尚' }
 
 export default function PrivacyPage() {
   return (
-    <main className="bg-surface text-fg">
+    <main className="bg-background text-foreground">
       <section className="border-b border-[var(--border)]">
         <div className="mx-auto max-w-[1120px] px-[20px] py-[48px]">
           <h1 className="text-[28px] leading-[36px] mb-[8px]">隐私政策</h1>
-          <p className="text-[14px] leading-[22px] text-muted">
+          <p className="text-[14px] leading-[22px] text-muted-foreground">
             本政策旨在说明我们如何收集、使用、存储与保护您的个人信息。
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
           <h2 className="text-[20px] leading-[28px]">9. 联系我们</h2>
           <p>邮箱：hi@yourdomain.com　电话：010-xxxx-xxxx</p>
 
-          <div className="text-[12px] leading-[18px] text-muted">
+          <div className="text-[12px] leading-[18px] text-muted-foreground">
             *
             本页面为展示站的简版隐私政策示例，具体以您的实际业务与法律要求为准。
           </div>

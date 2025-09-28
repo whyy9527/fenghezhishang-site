@@ -2,11 +2,11 @@ export const metadata = { title: '免责声明 - 丰和智尚' }
 
 export default function TermsPage() {
   return (
-    <main className="bg-surface text-fg">
+    <main className="bg-background text-foreground">
       <section className="border-b border-[var(--border)]">
         <div className="mx-auto max-w-[1120px] px-[20px] py-[48px]">
           <h1 className="text-[28px] leading-[36px] mb-[8px]">免责声明</h1>
-          <p className="text-[14px] leading-[22px] text-muted">
+          <p className="text-[14px] leading-[22px] text-muted-foreground">
             本页面旨在说明使用本网站信息的相关注意事项与责任边界。
           </p>
         </div>
@@ -43,7 +43,7 @@ export default function TermsPage() {
           <h2 className="text-[20px] leading-[28px]">6. 联系方式</h2>
           <p>邮箱：hi@yourdomain.com　电话：010-xxxx-xxxx</p>
 
-          <div className="text-[12px] leading-[18px] text-muted">
+          <div className="text-[12px] leading-[18px] text-muted-foreground">
             *
             若未来提供注册、下单、下载、互动等功能，请升级为正式《用户协议》，并与隐私政策、Cookie
             政策配套。

@@ -19,8 +19,8 @@ export function SiteFooter({
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-[var(--border)] bg-surface">
-      <div className="mx-auto max-w-[1120px] px-[20px] py-[20px] text-[12px] leading-[18px] text-muted flex flex-col md:flex-row md:items-center md:justify-between gap-[8px]">
+    <footer className="border-t border-[var(--border)] bg-background">
+      <div className="mx-auto max-w-[1120px] px-[20px] py-[20px] text-[12px] leading-[18px] text-muted-foreground flex flex-col md:flex-row md:items-center md:justify-between gap-[8px]">
         {/* 左侧：版权 + 备案位 */}
         <div className="flex items-center gap-[12px] flex-wrap">
           <span>
@@ -59,7 +59,7 @@ export function SiteFooter({
           {phone && <span>电话：{phone}</span>}
           {email && <span>邮箱：{email}</span>}
           {/* 分割线（可选） */}
-          <span className="text-[12px] text-muted">|</span>
+          <span className="text-[12px] text-muted-foreground">|</span>
           <a href="/privacy" className="underline underline-offset-2">
             隐私政策
           </a>

@@ -44,7 +44,7 @@ export default function ContactForm() {
           >
             {submitting ? '提交中...' : '提交（备案期间暂不启用）'}
           </Button>
-          <p className="text-[12px] leading-[18px] text-muted">
+          <p className="text-[12px] leading-[18px] text-muted-foreground">
             * 备案期间暂不进行在线信息收集，请通过邮箱或电话联系。
           </p>
         </form>
