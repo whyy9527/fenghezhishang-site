@@ -1,72 +1,85 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 
-export const metadata = { title: '服务与能力 - 丰和智尚' }
+export const metadata: Metadata = {
+  title: '服务 - 西咸新区丰和智上医疗科技有限公司',
+  description:
+    '服务列表 | 覆盖临床信息合规展示、科室协作与活动管理、品牌专区信息服务、合作对接与需求提交、学术会务与资料下载的数字化服务能力。',
+}
 
-const services = [
+const SERVICES = [
   {
-    slug: 'consulting',
-    title: '咨询与方案设计',
-    desc: '需求澄清、范围界定、里程碑与风险识别，形成可执行的落地方案与度量标准。',
-    tags: ['规划', '里程碑', '度量'],
+    slug: 'clinical-compliance-display',
+    title: '临床信息合规展示',
+    description:
+      '面向医院与科室的合规信息展示与资料托管；统一口径、更新留痕，便于科室学习与沟通。',
+    compliance: '合规属性：信息展示/技术服务，不涉诊疗与交易。',
   },
   {
-    slug: 'frontend',
-    title: '前端工程与设计系统',
-    desc: 'Next.js + Tailwind + shadcn 组件化交付，关注性能、可维护性与一致体验。',
-    tags: ['Next.js', 'Tailwind', 'shadcn'],
+    slug: 'department-collaboration-management',
+    title: '科室协作与活动管理',
+    description:
+      '科室宣教与活动方案在线化：计划、资料、反馈与复盘的闭环管理，提升沟通效率。',
+    compliance: '合规属性：信息展示/技术服务，不涉诊疗与交易。',
   },
   {
-    slug: 'backend-data',
-    title: '后端与数据',
-    desc: 'API 设计、鉴权、日志与监控，按需接入数据库与数据处理流程。',
-    tags: ['API', 'Auth', 'Observability'],
+    slug: 'brand-zone-services',
+    title: '品牌专区（医药/器械）信息服务',
+    description:
+      '医药及医疗器械品牌的资料集合页（说明书、合规材料、介绍视频等）与面向医疗机构的信息对接。',
+    compliance: '合规属性：信息展示，不含交易/撮合。',
   },
-]
+  {
+    slug: 'collaboration-intake',
+    title: '合作对接与需求提交',
+    description:
+      '合作线索与需求的标准化收集与分发，建立统一入口，缩短沟通路径。',
+    compliance: '合规属性：技术服务/信息收集，遵循隐私政策。',
+  },
+  {
+    slug: 'academic-events-resources',
+    title: '学术会务与资料下载',
+    description:
+      '学术交流活动报名、日程通知与会后资料下载的线上化管理。',
+    compliance: '合规属性：信息展示/活动管理，不涉诊疗与交易。',
+  },
+] as const
 
 export default function ServicesPage() {
   return (
     <main className="bg-background text-foreground">
       <section className="border-b border-[var(--border)]">
         <div className="mx-auto max-w-[1120px] px-[20px] py-[48px]">
-          <h1 className="text-[28px] leading-[36px] mb-[8px]">服务与能力</h1>
+          <h1 className="text-[28px] leading-[36px] mb-[8px]">服务</h1>
           <p className="text-[14px] leading-[22px] text-muted-foreground">
-            以“清晰目标、最小可行、度量反馈”为方法，提供稳定可靠的工程与交付。
+            我们以“数字化临床价值创新平台”为定位，提供覆盖临床信息展示、协作管理与品牌专区的合规服务能力。
           </p>
         </div>
       </section>
 
       <section>
-        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px] grid md:grid-cols-3 gap-[16px]">
-          {services.map((s) => (
+        <div className="mx-auto grid max-w-[1120px] gap-[16px] px-[20px] py-[48px] md:grid-cols-2">
+          {SERVICES.map((service) => (
             <Card
-              key={s.slug}
-              className="rounded-2xl border border-[var(--border)] hover:shadow-md"
+              key={service.slug}
+              className="rounded-2xl border border-[var(--border)] hover:shadow-sm transition-shadow"
             >
               <CardHeader className="p-[20px] pb-[8px]">
-                <h3 className="text-[20px] leading-[28px]">{s.title}</h3>
+                <h2 className="text-[20px] leading-[28px]">{service.title}</h2>
               </CardHeader>
-              <CardContent className="p-[20px] pt-[8px]">
-                <p className="text-[14px] leading-[22px] text-muted-foreground mb-[12px]">
-                  {s.desc}
+              <CardContent className="p-[20px] pt-[8px] space-y-[12px]">
+                <p className="text-[14px] leading-[22px] text-muted-foreground">
+                  {service.description}
                 </p>
-                <div className="flex flex-wrap gap-[8px] mb-[16px]">
-                  {s.tags.map((t) => (
-                    <Badge
-                      key={t}
-                      variant="secondary"
-                      className="px-[8px] py-[2px] text-[12px] leading-[18px]"
-                    >
-                      {t}
-                    </Badge>
-                  ))}
-                </div>
+                <p className="text-[12px] leading-[18px] text-muted-foreground">
+                  {service.compliance}
+                </p>
                 <Link
-                  href={`/services/${s.slug}`}
-                  className="text-[14px] leading-[22px] underline underline-offset-4"
+                  href={`/services/${service.slug}`}
+                  className="inline-flex text-[14px] leading-[22px] underline underline-offset-4"
                 >
-                  了解更多 →
+                  了解详情 →
                 </Link>
               </CardContent>
             </Card>
@@ -76,3 +89,4 @@ export default function ServicesPage() {
     </main>
   )
 }
+

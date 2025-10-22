@@ -1,9 +1,8 @@
 // components/site/footer.tsx
 type FooterProps = {
   companyName?: string
-  icp?: string // 例：沪ICP备12345678号-1
-  police?: { code: string; link?: string } | null // 例：沪公网安备 3101010200xxxx 号
-  address?: string
+  icp?: string
+  police?: { code: string; link?: string } | null
   phone?: string
   email?: string
 }
@@ -12,7 +11,6 @@ export function SiteFooter({
   companyName = '某某科技有限公司',
   icp,
   police = null,
-  address,
   phone,
   email,
 }: FooterProps) {
@@ -20,12 +18,9 @@ export function SiteFooter({
 
   return (
     <footer className="border-t border-[var(--border)] bg-background">
-      <div className="mx-auto max-w-[1120px] px-[20px] py-[20px] text-[12px] leading-[18px] text-muted-foreground flex flex-col md:flex-row md:items-center md:justify-between gap-[8px]">
-        {/* 左侧：版权 + 备案位 */}
-        <div className="flex items-center gap-[12px] flex-wrap">
-          <span>
-            © {year} {companyName} | 保留所有权利
-          </span>
+      <div className="mx-auto flex max-w-[1120px] flex-col gap-[8px] px-[20px] py-[20px] text-[12px] leading-[18px] text-muted-foreground md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-wrap items-center gap-[12px]">
+          <span>© {year} {companyName}</span>
           {icp ? (
             <a
               className="underline underline-offset-2"
@@ -36,7 +31,7 @@ export function SiteFooter({
               {icp}
             </a>
           ) : (
-            <span>（ICP备案申请中）</span>
+            <span>ICP备案申请中</span>
           )}
           {police?.code &&
             (police.link ? (
@@ -53,12 +48,17 @@ export function SiteFooter({
             ))}
         </div>
 
-        {/* 右侧：联系信息 + 合规链接 */}
-        <div className="flex items-center gap-[12px] flex-wrap">
-          {address && <span>地址：{address}</span>}
-          {phone && <span>电话：{phone}</span>}
-          {email && <span>邮箱：{email}</span>}
-          {/* 分割线（可选） */}
+        <div className="flex flex-wrap items-center gap-[12px]">
+          {phone && <span>电话 {phone}</span>}
+          {email && (
+            <a
+              href={`mailto:${email}`}
+              className="underline underline-offset-2"
+              rel="noreferrer"
+            >
+              邮箱 {email}
+            </a>
+          )}
           <span className="text-[12px] text-muted-foreground">|</span>
           <a href="/privacy" className="underline underline-offset-2">
             隐私政策

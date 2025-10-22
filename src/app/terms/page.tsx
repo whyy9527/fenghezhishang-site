@@ -1,52 +1,73 @@
-export const metadata = { title: '免责声明 - 丰和智尚' }
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '免责声明 - 西咸新区丰和智上医疗科技有限公司',
+  description:
+    '免责声明 | 说明西咸新区丰和智上医疗科技有限公司网站内容的使用范围、第三方链接责任、知识产权归属、免责情形与声明更新。',
+}
 
 export default function TermsPage() {
   return (
     <main className="bg-background text-foreground">
       <section className="border-b border-[var(--border)]">
-        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px]">
-          <h1 className="text-[28px] leading-[36px] mb-[8px]">免责声明</h1>
+        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px] space-y-[12px]">
+          <h1 className="text-[28px] leading-[36px]">免责声明</h1>
           <p className="text-[14px] leading-[22px] text-muted-foreground">
-            本页面旨在说明使用本网站信息的相关注意事项与责任边界。
+            本免责声明旨在说明本站内容的适用范围与责任边界，使用前请仔细阅读。
           </p>
         </div>
       </section>
 
       <section>
-        <div className="mx-auto max-w-[880px] px-[20px] py-[40px] grid gap-[16px] text-[14px] leading-[22px]">
-          <h2 className="text-[20px] leading-[28px]">1. 信息用途</h2>
-          <p>
-            本网站所载内容仅为一般性信息与服务能力展示，不构成任何投资、法律、医疗、教育等专业建议。
-            您据此采取的行动由您自行判断并承担风险。
-          </p>
+        <div className="mx-auto max-w-[880px] px-[20px] py-[48px] space-y-[24px] text-[14px] leading-[22px] text-foreground">
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">内容用途</h2>
+            <p className="text-muted-foreground">
+              本站内容仅为一般性信息与服务能力展示，不构成任何医疗、法律、投资等专业建议。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">2. 第三方链接</h2>
-          <p>
-            本站可能包含指向第三方网站的链接。我们对第三方网站的内容、安全性与隐私做法不承担责任。
-          </p>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">第三方链接</h2>
+            <p className="text-muted-foreground">
+              站内可能包含第三方链接，其内容与隐私做法由第三方负责。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">3. 知识产权</h2>
-          <p>
-            本站展示的商标、标识与内容（除另有说明）归本公司或相应权利人所有，未经授权不得使用。
-          </p>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">知识产权</h2>
+            <p className="text-muted-foreground">
+              站内商标、标识与内容（除另有说明）归本公司或相应权利人所有，未经授权不得使用。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">4. 免责范围</h2>
-          <p>
-            因不可抗力或第三方原因导致的服务中断、信息错误、数据丢失等情形，我们在法律允许范围内免责。
-          </p>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">免责情形</h2>
+            <p className="text-muted-foreground">
+              因不可抗力或第三方原因导致的服务中断、信息错误等情形，在法律允许范围内免责。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">5. 变更</h2>
-          <p>
-            我们可能根据需要更新本免责声明，更新后将在本站公示并自公布之日起生效。
-          </p>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">声明更新</h2>
+            <p className="text-muted-foreground">
+              本声明可能更新，以站内公示为准。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">6. 联系方式</h2>
-          <p>邮箱：hi@yourdomain.com　电话：010-xxxx-xxxx</p>
-
-          <div className="text-[12px] leading-[18px] text-muted-foreground">
-            *
-            若未来提供注册、下单、下载、互动等功能，请升级为正式《用户协议》，并与隐私政策、Cookie
-            政策配套。
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">联系方式</h2>
+            <p className="text-muted-foreground">
+              如需进一步了解，请通过电话 029-33163466 或邮箱
+              <a
+                href="mailto:58034404@qq.com"
+                className="underline underline-offset-4"
+                rel="noreferrer"
+              >
+                58034404@qq.com
+              </a>
+              与我们联系。
+            </p>
           </div>
         </div>
       </section>
