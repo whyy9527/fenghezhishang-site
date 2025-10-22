@@ -1,0 +1,19 @@
+{
+  "services": [
+    { "slug": "clinical-compliance-display", "title": "临床信息合规展示" },
+    { "slug": "department-collaboration-management", "title": "科室协作与活动管理" },
+    { "slug": "brand-zone-services", "title": "品牌专区（医药/器械）信息服务" },
+    { "slug": "collaboration-intake", "title": "合作对接与需求提交" },
+    { "slug": "academic-events-resources", "title": "学术会务与资料下载" }
+  ],
+  "pageCopy": {
+    "home": "v1",
+    "about": "v1",
+    "privacy": "v1",
+    "terms": "v1"
+  },
+  "placeholders": {
+    "address": true,
+    "hours": true
+  }
+}

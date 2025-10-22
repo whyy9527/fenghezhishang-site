@@ -1,68 +1,87 @@
-export const metadata = { title: '隐私政策 - 丰和智尚' }
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '隐私政策 - 西咸新区丰和智上医疗科技有限公司',
+  description:
+    '隐私政策 | 说明西咸新区丰和智上医疗科技有限公司在信息展示场景下的个人信息收集、使用、共享、存储、安全措施及用户权利。',
+}
 
 export default function PrivacyPage() {
   return (
     <main className="bg-background text-foreground">
       <section className="border-b border-[var(--border)]">
-        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px]">
-          <h1 className="text-[28px] leading-[36px] mb-[8px]">隐私政策</h1>
+        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px] space-y-[12px]">
+          <h1 className="text-[28px] leading-[36px]">隐私政策</h1>
           <p className="text-[14px] leading-[22px] text-muted-foreground">
-            本政策旨在说明我们如何收集、使用、存储与保护您的个人信息。
+            本隐私政策说明我们在信息展示场景下如何处理您主动提供的个人信息，以及您可享有的相关权利。
           </p>
         </div>
       </section>
 
       <section>
-        <div className="mx-auto max-w-[880px] px-[20px] py-[40px] grid gap-[16px] text-[14px] leading-[22px]">
-          <h2 className="text-[20px] leading-[28px]">1. 适用范围</h2>
-          <p>
-            本网站以信息展示为主。若您通过邮箱、电话或在线表单向我们提供联系方式与需求描述，
-            我们仅为沟通与服务对接之目的使用该信息。
-          </p>
+        <div className="mx-auto max-w-[880px] px-[20px] py-[48px] space-y-[24px] text-[14px] leading-[22px] text-foreground">
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">适用范围</h2>
+            <p className="text-muted-foreground">
+              本站以信息展示为主。仅在您主动通过电话、邮箱或表单提供联系信息时，出于沟通合作之目的收集必要信息。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">2. 收集的信息</h2>
-          <ul className="list-disc pl-[18px] space-y-[6px]">
-            <li>联系信息：您的称呼、邮箱、电话等。</li>
-            <li>
-              技术信息：为保障站点安全与运行所需的设备/浏览器信息与 IP（如有）。
-            </li>
-            <li>仅在获得您授权的前提下收集必要信息，不会超范围获取与使用。</li>
-          </ul>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">收集信息</h2>
+            <p className="text-muted-foreground">
+              称呼、邮箱、电话及您填入的需求描述；为保障站点安全运行，可能记录必要的技术信息（如浏览器类型、访问时间）。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">3. 使用目的</h2>
-          <p>用于回复咨询、沟通合作、改进服务与站点安全运行。</p>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">使用目的</h2>
+            <p className="text-muted-foreground">
+              用于回复咨询、合作沟通、改进服务与站点安全。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">4. 信息共享与披露</h2>
-          <p>
-            我们不会向无关第三方提供您的个人信息，法律法规另有规定或为履行法定义务的情形除外。
-          </p>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">共享与披露</h2>
+            <p className="text-muted-foreground">
+              不向无关第三方提供您的信息，法律法规另有规定除外。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">5. 存储与安全</h2>
-          <p>
-            我们采取合理的安全措施保护信息安全，仅在达成收集目的所必需的期限内保存。
-          </p>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">存储与安全</h2>
+            <p className="text-muted-foreground">
+              采取合理安全措施，仅在达成收集目的所必需的期限内保存。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">6. 您的权利</h2>
-          <p>
-            您有权查询、更正、删除您的个人信息，或撤回授权。请通过页面底部的联系方式与我们取得联系。
-          </p>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">您的权利</h2>
+            <p className="text-muted-foreground">
+              可通过邮箱
+              <a
+                href="mailto:58034404@qq.com"
+                className="underline underline-offset-4"
+                rel="noreferrer"
+              >
+                58034404@qq.com
+              </a>
+              查询、更正、删除信息或撤回授权。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">7. 未成年人信息</h2>
-          <p>
-            我们不以未成年人为服务对象，若涉及未成年人信息将在监护人同意后处理。
-          </p>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">未成年人信息</h2>
+            <p className="text-muted-foreground">
+              不以未成年人为服务对象，涉及时将依法依规处理。
+            </p>
+          </div>
 
-          <h2 className="text-[20px] leading-[28px]">8. 政策更新</h2>
-          <p>
-            我们可能根据法律法规或业务调整更新本政策，重要变更将在本站公示。
-          </p>
-
-          <h2 className="text-[20px] leading-[28px]">9. 联系我们</h2>
-          <p>邮箱：hi@yourdomain.com　电话：010-xxxx-xxxx</p>
-
-          <div className="text-[12px] leading-[18px] text-muted-foreground">
-            *
-            本页面为展示站的简版隐私政策示例，具体以您的实际业务与法律要求为准。
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">更新</h2>
+            <p className="text-muted-foreground">
+              政策可能更新，重要变更将在本站公示。
+            </p>
           </div>
         </div>
       </section>

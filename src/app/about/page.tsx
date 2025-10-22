@@ -1,80 +1,50 @@
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from '@/components/ui/accordion'
+import type { Metadata } from 'next'
 
-export const metadata = { title: '关于我们 - 丰和智尚' }
+export const metadata: Metadata = {
+  title: '关于我们 - 西咸新区丰和智上医疗科技有限公司',
+  description:
+    '关于我们 | 西咸新区丰和智上医疗科技有限公司定位为数字化临床价值创新平台，使命是连接医药创新与临床需求，服务医疗机构、医药器械企业、科研院校及政府园区，覆盖全国重点陕西（西安、咸阳）。',
+}
 
 export default function AboutPage() {
   return (
     <main className="bg-background text-foreground">
       <section className="border-b border-[var(--border)]">
-        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px]">
-          <h1 className="text-[28px] leading-[36px] mb-[8px]">关于我们</h1>
+        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px] space-y-[12px]">
+          <h1 className="text-[28px] leading-[36px]">关于我们</h1>
           <p className="text-[14px] leading-[22px] text-muted-foreground">
-            我们是一家专注于 XX
-            方向的技术服务团队，致力于以稳健的工程能力与务实的交付，帮助客户达成目标。
+            西咸新区丰和智上医疗科技有限公司定位为“数字化临床价值创新平台”，致力于连接医药创新与临床需求，提供合规、可验证的数字化服务。
           </p>
         </div>
       </section>
 
       <section>
-        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px] grid md:grid-cols-3 gap-[16px]">
-          {[
-            {
-              title: '使命',
-              desc: '以清晰、可验证、可迭代的方式，为客户持续创造价值。',
-            },
-            {
-              title: '价值观',
-              desc: '专业、透明、负责。关注长期关系与可持续发展。',
-            },
-            {
-              title: '能力域',
-              desc: 'XX 咨询、产品原型、前端工程、后端与数据、运维与安全合规。',
-            },
-          ].map((i, idx) => (
-            <Card
-              key={idx}
-              className="rounded-2xl border border-[var(--border)]"
-            >
-              <CardHeader className="p-[20px] pb-[8px]">
-                <h3 className="text-[20px] leading-[28px]">{i.title}</h3>
-              </CardHeader>
-              <CardContent className="p-[20px] pt-[8px]">
-                <p className="text-[14px] leading-[22px] text-muted-foreground">
-                  {i.desc}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+        <div className="mx-auto max-w-[880px] px-[20px] py-[48px] space-y-[24px] text-[14px] leading-[22px] text-foreground">
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">西咸新区丰和智上医疗科技有限公司</h2>
+            <ul className="list-disc space-y-[6px] pl-[18px] text-muted-foreground">
+              <li><strong className="font-medium text-foreground">定位：</strong>数字化临床价值创新平台</li>
+              <li>
+                <strong className="font-medium text-foreground">使命：</strong>
+                连接医药创新与临床需求，用合规、可验证的数字化方案，提升医疗服务效率与体验。
+              </li>
+              <li>
+                <strong className="font-medium text-foreground">服务对象：</strong>
+                医疗机构、医药/器械企业、科研院校与政府/园区。
+              </li>
+              <li>
+                <strong className="font-medium text-foreground">覆盖区域：</strong>
+                全国（重点：陕西；城市：西安、咸阳）。
+              </li>
+            </ul>
+          </div>
 
-      <section className="border-t border-[var(--border)]">
-        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px]">
-          <h2 className="text-[20px] leading-[28px] mb-[12px]">合规与承诺</h2>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="commit">
-              <AccordionTrigger className="text-[14px] leading-[22px]">
-                信息展示与合规声明
-              </AccordionTrigger>
-              <AccordionContent className="text-[14px] leading-[22px] text-muted-foreground">
-                本网站仅用于公司信息与服务能力的展示，不涉及新闻采编、教育培训、直播、交易撮合等需前置审批的活动。如需开展经营性互联网信息服务，将按法规申请相关资质。
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="privacy">
-              <AccordionTrigger className="text-[14px] leading-[22px]">
-                隐私与数据保护
-              </AccordionTrigger>
-              <AccordionContent className="text-[14px] leading-[22px] text-muted-foreground">
-                在获得您授权的前提下收集必要信息，并仅用于联系与服务对接，未经许可不对外共享。
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <div className="space-y-[8px]">
+            <h2 className="text-[20px] leading-[28px]">合规声明</h2>
+            <p className="text-muted-foreground">
+              本网站用于公司信息与服务能力展示，不涉及诊疗、药械交易、新闻采编等需前置审批的活动；如开展经营性互联网信息服务，将依法申请并公示相关资质。
+            </p>
+          </div>
         </div>
       </section>
     </main>
