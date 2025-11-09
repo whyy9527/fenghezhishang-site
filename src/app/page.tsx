@@ -40,13 +40,23 @@ const PLANS = [
 export default function Home() {
   return (
     <main className="bg-background text-foreground">
-      <section className="border-b border-[var(--border)]">
-        <div className="mx-auto flex max-w-[1120px] flex-col gap-[24px] px-[20px] py-[72px] md:flex-row md:items-center md:justify-between md:py-[96px]">
+      <section className="relative border-b border-[var(--border)]">
+        {/* Hero Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/images/hero/hero.png)',
+          }}
+        />
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/20" />
+
+        <div className="relative mx-auto flex max-w-[1120px] flex-col gap-[24px] px-[20px] py-[72px] md:flex-row md:items-center md:justify-between md:py-[96px]">
           <div className="max-w-[720px] space-y-[20px]">
-            <h1 className="text-[36px] leading-[44px]">
+            <h1 className="text-[36px] leading-[44px]  text-white">
               连接医药创新，服务临床医疗
             </h1>
-            <p className="text-[16px] leading-[26px] text-muted-foreground">
+            <p className="text-[16px] leading-[26px] text-white/90">
               西咸新区丰和智上医疗科技有限公司，以“数字化临床价值创新平台”为定位，面向医院、医药器械企业与科研机构，提供合规的临床信息展示与科室服务协作，助力医疗场景的高效与可验证落地。
             </p>
             <div className="flex flex-col gap-[12px] sm:flex-row">
