@@ -39,7 +39,7 @@ export default function AboutPage() {
             </ul>
           </div>
 
-          <div className="space-y-[8px]">
+          <div className="space-y-[8px] bg-accent/30 p-[20px] rounded-2xl">
             <h2 className="text-[20px] leading-[28px]">合规声明</h2>
             <p className="text-muted-foreground">
               本网站用于公司信息与服务能力展示，不涉及诊疗、药械交易、新闻采编等需前置审批的活动；如开展经营性互联网信息服务，将依法申请并公示相关资质。

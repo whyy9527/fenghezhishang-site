@@ -77,7 +77,7 @@ export default function ServicesPage() {
                 </p>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="inline-flex text-[14px] leading-[22px] underline underline-offset-4"
+                  className="inline-flex text-[14px] leading-[22px] text-primary underline underline-offset-4 hover:text-primary/90 transition-colors"
                 >
                   了解详情 →
                 </Link>

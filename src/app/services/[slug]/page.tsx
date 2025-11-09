@@ -138,9 +138,11 @@ export default async function ServiceDetail({ params }: { params: ParamsPromise 
             ))}
           </div>
 
-          <p className="text-[12px] leading-[18px] text-muted-foreground">
-            {service.compliance}
-          </p>
+          <div className="bg-accent/30 p-[16px] rounded-2xl">
+            <p className="text-[12px] leading-[18px] text-muted-foreground">
+              {service.compliance}
+            </p>
+          </div>
         </div>
       </section>
     </main>

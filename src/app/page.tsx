@@ -70,7 +70,7 @@ export default function Home() {
       </section>
 
       <section
-        className="border-b border-[var(--border)]"
+        className="border-b border-[var(--border)] bg-accent/30"
         aria-labelledby="values-heading"
       >
         <div className="mx-auto max-w-[1120px] px-[20px] py-[64px]">
@@ -128,7 +128,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-labelledby="plan-heading">
+      <section aria-labelledby="plan-heading" className="bg-accent/30">
         <div className="mx-auto flex max-w-[1120px] flex-col gap-[32px] px-[20px] py-[64px] md:flex-row">
           <div className="max-w-[360px] space-y-[12px]">
             <h2 id="plan-heading" className="text-[28px] leading-[36px]">

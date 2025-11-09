@@ -61,7 +61,7 @@ export default function TermsPage() {
               如需进一步了解，请通过电话 029-33163466 或邮箱
               <a
                 href="mailto:58034404@qq.com"
-                className="underline underline-offset-4"
+                className="text-primary underline underline-offset-4 hover:text-primary/90 transition-colors"
                 rel="noreferrer"
               >
                 58034404@qq.com
