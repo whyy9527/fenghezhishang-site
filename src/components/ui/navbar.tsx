@@ -27,13 +27,18 @@ export function Navbar() {
   ]
 
   return (
-    <header className="w-full border-b border-[var(--border)] bg-background">
+    <header className="w-full">
       <div className="mx-auto flex h-[60px] max-w-[1120px] items-center justify-between px-[20px]">
         {/* Logo */}
         <Link
           href="/"
-          className="text-[16px] font-medium leading-[24px] text-foreground"
+          className="flex items-center gap-2 text-[16px] font-medium leading-[24px] text-foreground"
         >
+          <img
+            src="/images/icons/icon.png"
+            alt="丰和智尚"
+            className="h-6 w-6 object-contain"
+          />
           丰和智尚
         </Link>
 
