@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "node server.mjs",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
+    "@react-dev-inspector/middleware": "^2.0.1",
     "@tailwindcss/postcss": "^4.1.13",
     "@types/node": "^20.19.17",
     "@types/react": "^19.1.13",
@@ -35,6 +36,7 @@
     "eslint": "^9.35.0",
     "eslint-config-next": "15.5.3",
     "prettier": "^3.6.2",
+    "react-dev-inspector": "^2.0.1",
     "tailwindcss": "^4.1.13",
     "tw-animate-css": "^1.3.8",
     "typescript": "^5.9.2"
