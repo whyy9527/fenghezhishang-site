@@ -19,7 +19,7 @@ export default function PrivacyPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-[880px] px-[20px] py-[48px] space-y-[24px] text-[14px] leading-[22px] text-foreground">
+        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px] space-y-[24px] text-[14px] leading-[22px] text-foreground">
           <div className="space-y-[8px]">
             <h2 className="text-[20px] leading-[28px]">适用范围</h2>
             <p className="text-muted-foreground">

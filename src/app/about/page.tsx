@@ -19,7 +19,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-[880px] px-[20px] py-[48px] space-y-[24px] text-[14px] leading-[22px] text-foreground">
+        <div className="mx-auto max-w-[1120px] px-[20px] py-[48px] space-y-[24px] text-[14px] leading-[22px] text-foreground">
           <div className="space-y-[8px]">
             <h2 className="text-[20px] leading-[28px]">西咸新区丰和智上医疗科技有限公司</h2>
             <ul className="list-disc space-y-[6px] pl-[18px] text-muted-foreground">
