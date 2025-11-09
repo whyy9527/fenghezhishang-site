@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Navbar } from '@/components/ui/navbar'
 import { SiteFooter } from '@/components/ui/footer'
-import DevInspector from '@/components/dev-inspector'
 
 const COMPANY_NAME = '西咸新区丰和智上医疗科技有限公司'
 
@@ -27,7 +26,6 @@ export default function RootLayout({
       <body className="antialiased">
         <Navbar />
         {children}
-        <DevInspector />
         <SiteFooter
           companyName={COMPANY_NAME}
           icp={undefined}
