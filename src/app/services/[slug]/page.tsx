@@ -112,8 +112,8 @@ export default async function ServiceDetail({ params }: { params: ParamsPromise 
       </section>
 
       <section>
-        <div className="mx-auto max-w-[880px] space-y-[24px] px-[20px] py-[40px]">
-          <Card className="rounded-2xl border border-[var(--border)]">
+        <div className="mx-auto max-w-[1120px] space-y-[24px] px-[20px] py-[40px]">
+          <Card className="rounded-2xl border border-[var(--border)] shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
             <CardHeader className="p-[20px] pb-[8px]">
               <h2 className="text-[20px] leading-[28px]">服务要点</h2>
             </CardHeader>

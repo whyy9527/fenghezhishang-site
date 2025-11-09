@@ -63,7 +63,7 @@ export default function ServicesPage() {
           {SERVICES.map((service) => (
             <Card
               key={service.slug}
-              className="rounded-2xl border border-[var(--border)] hover:shadow-sm transition-shadow"
+              className="rounded-2xl border border-[var(--border)] shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300"
             >
               <CardHeader className="p-[20px] pb-[8px]">
                 <h2 className="text-[20px] leading-[28px]">{service.title}</h2>

@@ -51,7 +51,9 @@ export function Navbar() {
                   </Link>
                 </NavigationMenuItem>
               ))}
-              <span className="mx-[4px] text-[12px] text-muted-foreground">|</span>
+              <span className="mx-[4px] text-[12px] text-muted-foreground">
+                |
+              </span>
               {policyLinks.map((l) => (
                 <NavigationMenuItem key={l.href}>
                   <Link
@@ -64,12 +66,6 @@ export function Navbar() {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-
-          <Link href="/contact">
-            <Button className="h-[36px] px-[14px] text-[14px] leading-[22px] bg-[var(--brand-600)] hover:bg-[var(--brand-700)]">
-              立即联系
-            </Button>
-          </Link>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -109,11 +105,6 @@ export function Navbar() {
                     {l.label}
                   </Link>
                 ))}
-                <Link href="/contact" onClick={() => setOpen(false)}>
-                  <Button className="mt-[8px] h-[40px] w-full text-[14px] leading-[22px] bg-[var(--brand-600)] hover:bg-[var(--brand-700)]">
-                    立即联系
-                  </Button>
-                </Link>
               </nav>
             </SheetContent>
           </Sheet>

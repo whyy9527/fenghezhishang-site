@@ -13,12 +13,15 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="rounded-2xl border border-[var(--border)]">
+    <Card className="rounded-2xl border border-[var(--border)] shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
       <CardHeader className="p-[20px] pb-[8px]">
         <h2 className="text-[20px] leading-[28px]">在线留言</h2>
       </CardHeader>
       <CardContent className="p-[20px] pt-[8px]">
-        <form className="flex flex-col gap-[12px]" onSubmit={(event) => event.preventDefault()}>
+        <form
+          className="flex flex-col gap-[12px]"
+          onSubmit={(event) => event.preventDefault()}
+        >
           <Input
             placeholder="您的称呼"
             className="h-[40px] text-[14px] leading-[22px]"
@@ -35,13 +38,16 @@ export default function ContactForm() {
             disabled
           />
           <Button
+            variant="outline"
             type="button"
             onClick={handleNotice}
-            className="h-[40px] px-[16px] text-[14px] leading-[22px] bg-[var(--brand-600)] hover:bg-[var(--brand-700)]"
+            className="h-[40px] px-[16px] text-[14px] leading-[22px]"
           >
             暂不在线收集，请电话/邮箱联系
           </Button>
-          <p className="text-[12px] leading-[18px] text-muted-foreground">{MESSAGE}</p>
+          <p className="text-[12px] leading-[18px] text-muted-foreground">
+            {MESSAGE}
+          </p>
         </form>
       </CardContent>
     </Card>
