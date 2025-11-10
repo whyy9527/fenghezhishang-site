@@ -1,0 +1,66 @@
+name: Build and Deploy (on tag)
+
+on:
+  push:
+    # only run when a tag is pushed (e.g. v1.0.0)
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Build static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm@9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+        run: pnpm build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-site
+          path: out
+
+  deploy:
+    name: Deploy to Alibaba OSS (using marketplace action)
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref_type == 'tag'
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: static-site
+          path: ./out
+
+      # Use the marketplace action `taixw2/deploy-aliyun-oss@v1` to upload to OSS.
+      # Please configure these repository secrets first: OSS_ENDPOINT, OSS_ACCESS_KEY_ID, OSS_ACCESS_KEY_SECRET, OSS_BUCKET
+      - name: Deploy to Aliyun OSS
+        uses: taixw2/deploy-aliyun-oss@v1
+        with:
+          # OSS endpoint (region/host), e.g. 'oss-cn-hangzhou.aliyuncs.com'
+          region: ${{ secrets.OSS_ENDPOINT }}
+          access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          bucket: ${{ secrets.OSS_BUCKET }}
+          secure: true
+          # Upload the exported Next.js `out/` directory
+          entry: out/**
+          remote-dir: /
+          path-rewrite: ^out/
