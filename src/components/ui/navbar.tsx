@@ -36,10 +36,10 @@ export function Navbar() {
         >
           <img
             src="/images/icons/icon.png"
-            alt="丰和智尚"
+            alt="丰和智上"
             className="h-6 w-6 object-contain"
           />
-          丰和智尚
+          丰和智上
         </Link>
 
         {/* Desktop Nav */}
