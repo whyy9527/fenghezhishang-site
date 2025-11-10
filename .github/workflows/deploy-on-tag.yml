@@ -59,6 +59,7 @@ jobs:
           oss-accesskey-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
           oss-accesskey-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
           # Target bucket/path in the form: oss://<BUCKET>/<PATH>
+          # delete-first: true 会删除目标路径下的所有文件，请确保 oss-path 指向正确的桶/目录，避免误删重要数据。常见做法是把网站放在 bucket 的子目录（如 oss://my-bucket/site/），而非根目录 /，以降低误操作风险。
           oss-path: oss://${{ secrets.OSS_BUCKET }}/
           # Deploy from the exported Next.js out/ directory
           local-path: ./out
