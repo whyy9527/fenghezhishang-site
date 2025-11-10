@@ -49,18 +49,20 @@ jobs:
           name: static-site
           path: ./out
 
-      # Use the marketplace action `taixw2/deploy-aliyun-oss@v1` to upload to OSS.
-      # Please configure these repository secrets first: OSS_ENDPOINT, OSS_ACCESS_KEY_ID, OSS_ACCESS_KEY_SECRET, OSS_BUCKET
-      - name: Deploy to Aliyun OSS
-        uses: taixw2/deploy-aliyun-oss@v1
+      # Use YangHanlin/oss-deployment-action which wraps ossutil and supports delete-first.
+      # Configure these repository secrets before running: OSS_ENDPOINT, OSS_ACCESS_KEY_ID, OSS_ACCESS_KEY_SECRET, OSS_BUCKET
+      - name: Deploy to Aliyun OSS (sync, delete-first)
+        uses: YangHanlin/oss-deployment-action@v1
         with:
-          # OSS endpoint (region/host), e.g. 'oss-cn-hangzhou.aliyuncs.com'
-          region: ${{ secrets.OSS_ENDPOINT }}
-          access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-          bucket: ${{ secrets.OSS_BUCKET }}
-          secure: true
-          # Upload the exported Next.js `out/` directory
-          entry: out/**
-          remote-dir: /
-          path-rewrite: ^out/
+          # OSS endpoint, e.g. 'oss-cn-hangzhou.aliyuncs.com'
+          oss-endpoint: ${{ secrets.OSS_ENDPOINT }}
+          oss-accesskey-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          oss-accesskey-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          # Target bucket/path in the form: oss://<BUCKET>/<PATH>
+          oss-path: oss://${{ secrets.OSS_BUCKET }}/
+          # Deploy from the exported Next.js out/ directory
+          local-path: ./out
+          # Delete remote files under oss-path before upload (full sync)
+          delete-first: true
+          # Optional: enable debug by setting ACTIONS_STEP_DEBUG secret
+          debug: ${{ secrets.ACTIONS_STEP_DEBUG }}
